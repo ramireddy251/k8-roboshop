@@ -10,7 +10,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    marchLabels:
+    matchLabels:
       project: roboshop
       tier: db
       component: mongodb
