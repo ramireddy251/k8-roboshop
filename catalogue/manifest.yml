@@ -55,13 +55,13 @@ spec:
         envFrom:
         - configMapRef:
             name: catalogue
-      resources:
-        requests:
-          cpu: "128m"
-          memory: "256Mi"
-        limits:
-          cpu: "256m"
-          memory: "512Mi"
+        resources:
+          requests:
+            cpu: "128m"
+            memory: "256Mi"
+          limits:
+            cpu: "256m"
+            memory: "512Mi"
 
 ---
 
