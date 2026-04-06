@@ -38,17 +38,17 @@ spec:
       - name: catalogue
         image: joindevops/catalogue:1.0.0
         readinesssProbe:
-          httpGet:
-            path: /health
+          # httpGet:
+          #   path: /health
+          #   port: 8080
+          tcpSocket:
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
           initialDelaySeconds: 5
         livenessProbe:
-          # httpGet:
-          #   path: /health
-          #   port: 8080
-          tcpSocket:
+          httpGet:
+            path: /health
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
