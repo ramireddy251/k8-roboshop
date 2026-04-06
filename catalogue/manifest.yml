@@ -37,7 +37,7 @@ spec:
       containers:
       - name: catalogue
         image: joindevops/catalogue:1.0.0
-        readinesssProbe:
+        readinessProbe:
           # httpGet:
           #   path: /health
           #   port: 8080
