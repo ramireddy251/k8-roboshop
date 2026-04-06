@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: roboshop
+  labels:
+  project: roboshop
+  tier: db
+  component: mongodb
+spec:
+  replicas: 1
+  selector:
+    marchLabels:
+      project: roboshop
+      tier: db
+      component: mongodb
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        tier: db
+        component: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: joindevops/mongodb:1.0.0
+      resources:
+        requests:
+          cpu: "128m"
+          ram: "256Mi"
+        limits:
+          cpu: "256m"
+          ram: "512Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: roboshop
+  labels:
+    project: roboshop
+    tier: db
+    component: mongodb
+spec:
+  type: ClusterIP
+  selector:
+    project: roboshop
+    tier: db
+    component: mongodb
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017     
