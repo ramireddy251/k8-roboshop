@@ -24,6 +24,7 @@ spec:
       containers:
       - name: redis
         image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/redis
+        imagePullPolicy: Always
       resources:
         requests:
           cpu: "128m"
