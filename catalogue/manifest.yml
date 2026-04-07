@@ -37,6 +37,7 @@ spec:
       containers:
       - name: catalogue
         image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/catalogue
+        imagePullPolicy: Always
         readinessProbe:
           # httpGet:
           #   path: /health
