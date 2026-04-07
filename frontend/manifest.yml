@@ -40,7 +40,6 @@ spec:
             port: 80
           failureThreshold: 2
           periodSeconds: 10
-            name: catalogue
         resources:
           requests:
             cpu: "128m"
