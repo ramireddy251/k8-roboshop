@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: joindevops/catalogue:1.0.0
+        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/catalogue
         readinessProbe:
           # httpGet:
           #   path: /health
@@ -45,7 +45,7 @@ spec:
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
-          initialDelaySeconds: 5
+          initialDelaySeconds: 15
         livenessProbe:
           httpGet:
             path: /health
