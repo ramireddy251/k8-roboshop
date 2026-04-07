@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: joindevops/mongodb:1.0.0
+        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/mongodb
       resources:
         requests:
           cpu: "128m"
