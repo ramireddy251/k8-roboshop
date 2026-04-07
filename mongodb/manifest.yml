@@ -24,6 +24,7 @@ spec:
       containers:
       - name: mongodb
         image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/mongodb
+        imagePullPolicy: Always
       resources:
         requests:
           cpu: "128m"
