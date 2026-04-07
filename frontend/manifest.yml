@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalogue
+  name: frontend
   namespace: roboshop
   labels:
     project: roboshop
     tier: frontend
-    component: catalogue
+    component: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
       project: roboshop
       tier: frontend
-      component: catalogue
+      component: frontend
   template:
     metadata:
       labels:
         project: roboshop
         tier: frontend
-        component: catalogue
+        component: frontend
     spec:
       containers:
-      - name: catalogue
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/catalogue
+      - name: frontend
+        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/frontend
         imagePullPolicy: Always
         readinessProbe:
           # httpGet:
@@ -53,18 +53,18 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: catalogue
+  name: frontend
   namespace: roboshop
   labels:
     project: roboshop
     tier: frontend
-    component: catalogue
+    component: frontend
 spec:
   type: LoadBalancer
   selector:
     project: roboshop
     tier: frontend
-    component: catalogue
+    component: frontend
   ports:
   - protocol: TCP
     port: 80
