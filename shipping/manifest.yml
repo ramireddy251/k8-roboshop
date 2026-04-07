@@ -48,7 +48,7 @@ spec:
           periodSeconds: 10
           initialDelaySeconds: 15
         startupProbe:
-          http:Get:
+          httpGet:
             path: /health
             port: 8080
           failureThreshold: 20    
