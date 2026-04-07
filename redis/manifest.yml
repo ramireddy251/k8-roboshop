@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: roboshop
+  labels:
+    project: roboshop
+    tier: db
+    component: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshop
+      tier: db
+      component: redis
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        tier: db
+        component: redis
+    spec:
+      containers:
+      - name: redis
+        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/redis
+      resources:
+        requests:
+          cpu: "128m"
+          memory: "256Mi"
+        limits:
+          cpu: "256m"
+          memory: "512Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: roboshop
+  labels:
+    project: roboshop
+    tier: db
+    component: redis
+spec:
+  type: ClusterIP
+  selector:
+    project: roboshop
+    tier: db
+    component: redis
+  ports:
+  - protocol: TCP
+    port: 6379
+    targetPort: 6379     
