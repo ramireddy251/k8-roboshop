@@ -75,7 +75,7 @@ spec:
         requests:
           storage: 5Gi    
 
----
+---  
 
 apiVersion: v1
 kind: Service
