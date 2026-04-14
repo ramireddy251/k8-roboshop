@@ -1,5 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-headless
+  namespace: roboshop
+  labels:
+    project: roboshop
+    tier: db
+    component: mongodb
+spec:
+  clusterIP: None
+  selector:
+    project: roboshop
+    tier: db
+    component: mongodb
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mongodb-ebs
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mongodb
   namespace: roboshop
@@ -32,6 +60,19 @@ spec:
         limits:
           cpu: "256m"
           memory: "512Mi"
+      volumeMounts:
+        - name: mongodb
+          mountPath: /data/db
+  #PVC        
+  volumeClaimTemplates:
+  - metadata:
+      name: mongodb
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: mongodb-ebs
+      resources:
+        requests:
+          storage: 5Gi    
 
 ---
 
