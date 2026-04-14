@@ -27,7 +27,7 @@ volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Retain
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mysql
   namespace: roboshop
