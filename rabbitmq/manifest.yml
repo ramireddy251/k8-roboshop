@@ -79,7 +79,7 @@ spec:
             memory: "512Mi"
         volumeMounts:
         - name: rabbitmq
-          mountPath: /var/lib/mysql
+          mountPath: /var/lib/rabbitmq
   #PVC        
   volumeClaimTemplates:
   - metadata:
