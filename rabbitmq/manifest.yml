@@ -37,7 +37,7 @@ metadata:
     component: rabbitmq
 data:
   RABBITMQ_DEFAULT_USER: roboshop
-  RABBITMQ_DEFAULT_pass: roboshop123
+  RABBITMQ_DEFAULT_PASS: roboshop123
 ---
 apiVersion: apps/v1
 kind: StatefulSet
