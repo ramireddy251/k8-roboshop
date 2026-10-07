@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: shipping
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/shipping
+        image: 104050870679.dkr.ecr.us-east-1.amazonaws.com/roboshop/shipping
         imagePullPolicy: Always
         readinessProbe:
           # httpGet:

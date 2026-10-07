@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/mongodb
+        image: 104050870679.dkr.ecr.us-east-1.amazonaws.com/roboshop/mongodb
         imagePullPolicy: Always
         resources:
           requests:

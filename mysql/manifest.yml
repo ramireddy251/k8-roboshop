@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/mysql
+        image: 104050870679.dkr.ecr.us-east-1.amazonaws.com/roboshop/mysql
         imagePullPolicy: Always
         resources:
           requests:

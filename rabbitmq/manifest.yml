@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
       - name: rabbitmq
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/rabbitmq
+        image: 104050870679.dkr.ecr.us-east-1.amazonaws.com/roboshop/rabbitmq
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

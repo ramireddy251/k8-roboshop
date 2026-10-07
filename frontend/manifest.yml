@@ -101,7 +101,7 @@ spec:
           name: frontend
       containers:
       - name: frontend
-        image: 966392474288.dkr.ecr.us-east-1.amazonaws.com/frontend
+        image: 104050870679.dkr.ecr.us-east-1.amazonaws.com/roboshop/frontend
         imagePullPolicy: Always
         readinessProbe:
           # httpGet:
